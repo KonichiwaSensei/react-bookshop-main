@@ -1,0 +1,16 @@
+$font_family: 'Courier New', Courier, monospace;
+
+.app {
+  flex-grow: 1;
+  font-family: $font_family;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__headline {
+    text-decoration: underline;
+    color: navy;
+  }
+}
+

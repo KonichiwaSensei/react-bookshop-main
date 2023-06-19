@@ -1,0 +1,14 @@
+html {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+}

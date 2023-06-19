@@ -1,0 +1,41 @@
+.header {
+    align-self: stretch;
+    background-color: #e7e7e7;
+    padding: 1em;
+}
+
+.burger {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.25em;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    > div {
+        height: 3px;
+        background-color: black;
+        border-radius: 1.5px;
+    }
+}
+
+nav.dark {
+    background-color: #666;
+    color: white;
+
+    a {
+        color: inherit;
+    }
+}
+
+nav {
+    .link {
+        &--highlighed {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+}
