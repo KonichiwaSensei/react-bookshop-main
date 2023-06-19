@@ -3,9 +3,7 @@ import TopMenuLink from "./TopMenuLink";
 
 export default function Topmenu(props) {
 
-    const { page } = props;
-
-    console.log(page);
+    const { page, setCurrentPage, setTitle } = props;
 
     const [open, setOpen] = useState(false);
     const [theme, setTheme] = useState('light');
@@ -31,16 +29,22 @@ export default function Topmenu(props) {
                             label="Home"
                             href=""
                             currentPage={ page }
+                            setCurrentPage={ setCurrentPage }
+                            setTitle={ setTitle }
                         />
                         <TopMenuLink
                             label="About us"
                             href="about"
                             currentPage={ page }
+                            setCurrentPage={ setCurrentPage }
+                            setTitle={ setTitle }
                         />
                         <TopMenuLink
                             label="Contact"
                             href="contact"
                             currentPage={ page }
+                            setCurrentPage={ setCurrentPage }
+                            setTitle={ setTitle }
                         />
 
                         <a

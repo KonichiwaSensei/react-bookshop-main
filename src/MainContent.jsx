@@ -1,9 +1,10 @@
 import './MainContent.scss'
 
-export default function MainContent() {
+export default function MainContent({ title }) {
+
     return (
         <main className="main">
-            <h1 className="app__headline">Black Books</h1>
+            <h1 className="app__headline">{ title }</h1>
         </main>
     )
 }

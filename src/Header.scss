@@ -2,6 +2,12 @@
     align-self: stretch;
     background-color: #e7e7e7;
     padding: 1em;
+    display: flex;
+    align-items: center;
+
+    &__sitename {
+        margin-right: auto;
+    }
 }
 
 .burger {
@@ -33,6 +39,8 @@ nav.dark {
 
 nav {
     .link {
+        margin-right: 1em;
+
         &--highlighed {
             text-decoration: none;
             font-weight: bold;

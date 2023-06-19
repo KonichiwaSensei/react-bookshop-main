@@ -7,13 +7,17 @@ import MainContent from './MainContent'
 import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // App is the closest common ancestor of TopMenuLink and MainContent
+  // so it will keep all the values that both those components need
+  // for example the title:
+  const [title, setTitle] = useState('Home')
 
   return (
     <div className="app">
-        <Header />
+        <Header setTitle={ setTitle } />
 
-        <MainContent />
+        <MainContent title={ title } />
 
         <Footer />
     </div>
