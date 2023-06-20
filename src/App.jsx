@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Header from './Header'
 import Footer from './Footer'
 import MainContent from './MainContent'
 import './App.scss'
+import CurrencyContext from './CurrencyContext';
 
 function App() {
 
@@ -12,15 +13,27 @@ function App() {
   // so it will keep all the values that both those components need
   // for example the title:
   const [title, setTitle] = useState('Home')
+  const [currency, setCurrency] = useState('EUR');
+
+  // useEffect(() => {
+  //   localStorage.setItem('currency', currency);
+  // }, [currency])
 
   return (
-    <div className="app">
-        <Header setTitle={ setTitle } />
+    <CurrencyContext.Provider value={ {
+        currency,
+        setCurrency
+    } }>
 
-        <MainContent title={ title } />
+      <div className="app">
+          <Header setTitle={ setTitle } />
 
-        <Footer />
-    </div>
+          <MainContent title={ title } />
+
+          <Footer />
+      </div>
+
+    </CurrencyContext.Provider>
   )
 }
 

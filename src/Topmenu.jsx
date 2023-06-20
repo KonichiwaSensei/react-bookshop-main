@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TopMenuLink from "./TopMenuLink";
+import CurrencySelection from "./CurrencySelection";
 
 export default function Topmenu(props) {
 
@@ -48,11 +49,14 @@ export default function Topmenu(props) {
                         />
 
                         <a
+                            className="link"
                             href="#"
                             onClick={ toggleTheme }
                         >
                             { theme === 'light' ? 'Dark' : 'Light' } theme
                         </a>
+
+                        <CurrencySelection />
                     </nav>
                     : ''
             }
