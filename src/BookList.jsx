@@ -31,11 +31,11 @@ export default function BookList() {
 
             <h2>Book list</h2>
 
-            <ul class="book-list">
+            <ul className="book-list">
                 {
                     books === null
                         ? <li>Loading...</li>
-                        : books.map(book => <BookListItem { ...book } />)
+                        : books.map(book => <BookListItem key={ book.id } { ...book } />)
                 }
             </ul>
 
