@@ -1,15 +1,23 @@
 import { useContext, useEffect, useState } from "react"
-import CurrencyContext from './CurrencyContext'
+import Context from "./Context";
 
 export default function CurrencySelection() {
 
-    const { currency, setCurrency } = useContext(CurrencyContext);
+    const { context, dispatch } = useContext(Context);
 
-    const [exchangeRate, setExchangeRate] = useState(1);
+    const { currency, exchangeRate } = context;
+
+    // const [exchangeRate, setExchangeRate] = useState(1);
     const [exchangeRates, setExchangeRates] = useState([]);
 
     const handleSelect = (event) => {
-        setCurrency(event.target.value);
+
+        dispatch({
+            type: 'currency/set',
+            payload: event.target.value
+        })
+
+        // setCurrency(event.target.value);
     }
 
     const loadExchangeRates = async () => {
@@ -33,7 +41,10 @@ export default function CurrencySelection() {
                 const { rate } = exchangeRates.find(item => item.currency === currency);
 
                 // change the stateful value exchangeRate with the value of .rate
-                setExchangeRate(rate);
+                dispatch({
+                    type: 'exchangeRate/set',
+                    payload: rate
+                });
             }
         }
 
@@ -59,9 +70,9 @@ export default function CurrencySelection() {
             </select>
 
             {
-                exchangeRate !== 1
-                    ? <div class="exchange-rate">
-                        1 EUR = { exchangeRate.toFixed(2) } { currency}
+                exchangeRate !== 1 && exchangeRate !== null
+                    ? <div className="exchange-rate">
+                        1 EUR = { exchangeRate.toFixed(2) } { currency }
                     </div>
                     : ''
             }

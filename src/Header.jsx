@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Header.scss';
 import Topmenu from './Topmenu';
+import CartOverview from './CartOverview';
 
 export default function Header({ setTitle }) {
 
@@ -11,6 +12,8 @@ export default function Header({ setTitle }) {
             <div className="header__sitename">
                 Black Books
             </div>
+
+            <CartOverview />
 
             <Topmenu
                 page={ currentPage }
