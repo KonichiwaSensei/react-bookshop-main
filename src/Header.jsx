@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Header.scss';
 import Topmenu from './Topmenu';
 import CartOverview from './CartOverview';
+import { Route, Routes } from 'react-router-dom';
 
 export default function Header({ setTitle }) {
 
@@ -20,6 +21,10 @@ export default function Header({ setTitle }) {
                 setCurrentPage={ setCurrentPage }
                 setTitle={ setTitle }
             />
+            <Routes>
+                <Route path="contact" element={<span>Now on the contact page</span>} />
+                <Route path="*" element={''} />
+            </Routes>
         </header>
     )
 

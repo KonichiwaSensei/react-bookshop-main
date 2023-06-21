@@ -35,7 +35,7 @@ export default function Topmenu(props) {
                         />
                         <TopMenuLink
                             label="About us"
-                            href="about"
+                            href="about-us"
                             currentPage={ page }
                             setCurrentPage={ setCurrentPage }
                             setTitle={ setTitle }
