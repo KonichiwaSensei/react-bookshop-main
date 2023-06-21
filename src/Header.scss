@@ -1,6 +1,6 @@
 .header {
     align-self: stretch;
-    background-color: #e7e7e7;
+    background-color: #8cff00;
     padding: 1em;
     display: flex;
     align-items: center;
@@ -17,19 +17,19 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 0.25em;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 217, 0);
     border-radius: 0.25rem;
     cursor: pointer;
 
     > div {
         height: 3px;
-        background-color: black;
+        background-color: rgb(255, 217, 0);
         border-radius: 1.5px;
     }
 }
 
 nav.dark {
-    background-color: #666;
+    background-color: rgb(255, 183, 0);
     color: white;
 
     a {

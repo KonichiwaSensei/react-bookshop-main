@@ -10,7 +10,7 @@ export default function Header({ setTitle }) {
     return (
         <header className="header">
             <div className="header__sitename">
-                Black Books
+                Booking's Books Bookshop
             </div>
 
             <CartOverview />

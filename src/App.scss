@@ -1,7 +1,7 @@
 
 .app {
   flex-grow: 1;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
 
   &__headline {
     text-decoration: underline;
-    color: navy;
+    color: rgb(0, 255, 13);
   }
 }
 
