@@ -50,7 +50,7 @@ export default function CurrencySelection() {
 
         ,
 
-        [ currency ]
+        [ currency, exchangeRates ]
     )
 
     useEffect(() => {

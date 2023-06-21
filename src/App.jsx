@@ -5,9 +5,10 @@ import Header from './Header'
 import Footer from './Footer'
 import MainContent from './MainContent'
 import './App.scss'
-import Context from './Context'
+import MyBoxOfData from './Context'
 import reducer from './reducer'
 // import CurrencyContext from './CurrencyContext';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -41,20 +42,25 @@ function App() {
   // }, [currency])
 
   return (
-    <Context.Provider value={ {
-        context,
-        dispatch
-    } }>
 
-        <div className="app">
-            <Header setTitle={ setTitle } />
+    <BrowserRouter>
 
-            <MainContent title={ title } />
+      <MyBoxOfData.Provider value={ {
+          context, // data
+          dispatch // function to change the data
+      } }>
 
-            <Footer />
-        </div>
+          <div className="app">
+              <Header setTitle={ setTitle } />
 
-    </Context.Provider>
+              <MainContent title={ title } />
+
+              <Footer />
+          </div>
+
+      </MyBoxOfData.Provider>
+
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,10 @@
 import Homepage from './Homepage'
+import AboutUs from './AboutUs';
+import Contact from './Contact';
 import './MainContent.scss'
+import { Routes, Route } from 'react-router-dom'
+import BookDetail from './BookDetail';
+import SubpageLayout from './SubpageLayout';
 
 export default function MainContent({ title }) {
 
@@ -7,7 +12,17 @@ export default function MainContent({ title }) {
         <main className="main">
             <h1 className="app__headline">{ title }</h1>
 
-            <Homepage />
+            <Routes>
+                <Route path="/" element={ <Homepage /> } />
+
+                <Route path="/" element={ <SubpageLayout /> }>
+                    <Route path="/about-us" element={ <AboutUs /> } />
+                    <Route path="/contact/*" element={ <Contact /> } />
+                    <Route path="/book/:id" element={ <BookDetail /> } />
+                    <Route path="*" element={ <h1>404 page not found</h1> } />
+                </Route>
+            </Routes>
+
         </main>
     )
 }

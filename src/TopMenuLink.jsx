@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
+
 export default function TopMenuLink({ label, href, currentPage, setCurrentPage, setTitle }) {
 
     return (
-        <a
+        <Link
             className={ `link` + (currentPage === href ? ` link--highlighed` : '') }
-            href={ `#` + href }
+            to={ `/` + href }
             onClick={ () => { setCurrentPage(href); setTitle(label) } }
         >
             { label }
-        </a>
+        </Link>
     )
 }
