@@ -8,6 +8,7 @@ import './App.scss'
 import Context from './Context'
 import reducer from './reducer'
 // import CurrencyContext from './CurrencyContext';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -41,20 +42,23 @@ function App() {
   // }, [currency])
 
   return (
-    <Context.Provider value={ {
+
+    <BrowserRouter>
+      <Context.Provider value={{
         context,
         dispatch
-    } }>
+      }}>
 
         <div className="app">
-            <Header setTitle={ setTitle } />
+          <Header setTitle={setTitle} />
 
-            <MainContent title={ title } />
+          <MainContent title={title} />
 
-            <Footer />
+          <Footer />
         </div>
 
-    </Context.Provider>
+      </Context.Provider>
+    </BrowserRouter>
   )
 }
 
